@@ -1,0 +1,27 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<div id="content">
+
+	
+<a class="test-link" n:href="test!">asdf</a>
+
+<script>
+$(".test-link").click(function(e){
+        e.preventDefault();
+        var $el = $(this);
+
+        $.nette.ajax({
+            url: $el.attr("href"),
+            success: function(payload) {
+                console.log(payload.value);
+            }
+        });
+    });
+</script>
+	
+
+	
+</div>
+{/block}
+
